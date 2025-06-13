@@ -6,8 +6,11 @@ def main():
 
     library_folder = input("Enter the path to your library folder: ")
     output_file = input("Enter the name of the output file (default: library.json): ")
+    if output_file == "":
+        output_file = "library.json"
 
     if output_file not in (file for file in os.listdir(os.getcwd()) if os.path.isfile(file)):
+
         os.chdir(library_folder)
 
         artists = []
